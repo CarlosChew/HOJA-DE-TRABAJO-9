@@ -30,30 +30,22 @@ public class Main {
 		
 		String translate = "";
 		String direction ="";
-		
 		System.out.println("Choose the file ");
 		keyboard.nextLine();
-		
-	
 		JFileChooser chooser = new JFileChooser();
 		chooser.setCurrentDirectory(new java.io.File("./src"));
 		chooser.setDialogTitle("Choose the file");
 		chooser.setFileFilter(new FileNameExtensionFilter("DIC (.dic", "dic"));
-
 		int value = chooser.showOpenDialog(null);
 		if(value == JFileChooser.APPROVE_OPTION) {
 			try {
 			
 				FileInputStream stream = new FileInputStream(chooser.getSelectedFile().getAbsolutePath());
 				BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
-				
 				String line;
 				while((line = reader.readLine()) != null) {
-				
 					dictionary.add(line);
 				}
-				
-		
 				for(int i = 0; i<dictionary.size(); i++) {
 					String data = dictionary.get(i).substring(i, dictionary.get(i).length() - 1);
 					String[] charsequence = data.split("");
@@ -63,10 +55,6 @@ public class Main {
 				System.err.println("El .txt esta vacio");
 			}
 		}
-		
-		
-		
-
 		System.out.println("Choose the file to translate");
         keyboard.nextLine();
         JFileChooser chooser2 = new JFileChooser(System.getProperty("java.class.path"));
