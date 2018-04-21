@@ -21,7 +21,7 @@ import java.util.Scanner;
 import javax.swing.*;
 
 public class Main {
-	public static void Main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException {
 		Scanner keyboard = new Scanner(System.in);
 	
 		ArrayList<String> dictionary = new ArrayList<String>();
